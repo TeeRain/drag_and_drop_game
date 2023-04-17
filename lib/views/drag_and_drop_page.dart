@@ -19,13 +19,12 @@ class DragAndDropPageState extends State<DragAndDropPage> {
   bool isDragged2 = false;
 
   void reset() {
-    Navigator.pushReplacement(
-      context,
-      PageRouteBuilder(
-        transitionDuration: Duration.zero,
-        pageBuilder: (_, __, ___) => const DragAndDropPage(),
-      ),
-    );
+    setState(() {
+      target1Data = 'one';
+      target2Data = 'two';
+      isDragged1 = false;
+      isDragged2 = false;
+    });
   }
 
   @override
